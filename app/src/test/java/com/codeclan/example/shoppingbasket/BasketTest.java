@@ -3,6 +3,8 @@ package com.codeclan.example.shoppingbasket;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -21,7 +23,7 @@ public class BasketTest {
 
     @Test
     public void testEmptyBasketTotal() {
-        assertEquals(0, basket.getTotal(), 0.01);
+        assertEquals(0, basket.getSubTotal(), 0.01);
     }
 
     @Test
@@ -36,6 +38,13 @@ public class BasketTest {
     @Test
     public void testAddItemToBasketIncreasesTotal(){
         basket.addToBasket(item);
-        assertEquals(15.99, basket.getTotal(), 0.01);
+        assertEquals(15.99, basket.getSubTotal(), 0.01);
+    }
+    @Test
+    public void testAddingMultipleItemsToBasket(){
+        basket.addToBasket(item);
+        basket.addToBasket(item);
+        assertEquals(31.98, basket.getSubTotal(), 0.01);
+        assertEquals(2, basket.getNumOfItemsOfBasket());
     }
 }
