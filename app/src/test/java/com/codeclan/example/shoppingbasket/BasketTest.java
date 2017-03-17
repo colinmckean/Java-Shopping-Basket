@@ -58,4 +58,12 @@ public class BasketTest {
         assertEquals(0, basket.getNumOfItemsOfBasket());
         assertEquals(0, basket.getSubTotal(), 0.01);
     }
+    @Test
+    public void testCanRemoveSingleItemFromBasket(){
+        basket.addToBasket(item);
+        basket.addToBasket(item);
+        basket.removeItem(item);
+        assertEquals(1, basket.getNumOfItemsOfBasket());
+        assertEquals(15.99, basket.getSubTotal(), 0.01);
+    }
 }
