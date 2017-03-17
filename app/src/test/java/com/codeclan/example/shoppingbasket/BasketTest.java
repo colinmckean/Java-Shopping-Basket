@@ -21,4 +21,9 @@ public class BasketTest {
     public void testEmptyBasketTotal() {
         assertEquals(0, basket.getTotal());
     }
+
+    @Test
+    public void testNumOfItemsInEmptyBasket() {
+        assertEquals(0, basket.getNumOfItemsOfBasket());
+    }
 }
