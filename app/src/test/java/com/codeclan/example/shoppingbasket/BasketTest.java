@@ -47,4 +47,15 @@ public class BasketTest {
         assertEquals(31.98, basket.getSubTotal(), 0.01);
         assertEquals(2, basket.getNumOfItemsOfBasket());
     }
+
+    @Test
+    public void testCanEmptyBasket(){
+        basket.addToBasket(item);
+        basket.addToBasket(item);
+        assertEquals(31.98, basket.getSubTotal(), 0.01);
+        assertEquals(2, basket.getNumOfItemsOfBasket());
+        basket.emptyBasket();
+        assertEquals(0, basket.getNumOfItemsOfBasket());
+        assertEquals(0, basket.getSubTotal(), 0.01);
+    }
 }
