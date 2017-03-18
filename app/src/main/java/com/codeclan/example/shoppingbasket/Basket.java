@@ -31,4 +31,8 @@ class Basket {
     public void removeItem(ShoppingItem item) {
         itemsInBasket.remove(item);
     }
+
+    public ArrayList<ShoppingItem> getBasket() {
+        return new ArrayList<>(itemsInBasket);
+    }
 }
