@@ -8,15 +8,19 @@ import java.util.ArrayList;
 
 class Basket {
     private double subTotal;
-    private ArrayList<ShoppingItem> itemsInCart = new ArrayList<>();
+    private ArrayList<ShoppingItem> itemsInBasket = new ArrayList<>();
 
     public double getSubTotal() {
         subTotal = 0;
-        for (ShoppingItem i : itemsInCart) subTotal += i.getPrice();
+        for (ShoppingItem i : itemsInBasket) subTotal += i.getPrice();
         return subTotal;
     }
 
     public int getNumOfItemsOfBasket() {
-        return itemsInCart.size();
+        return itemsInBasket.size();
+    }
+
+    public void addToBasket(ShoppingItem item) {
+        itemsInBasket.add(item);
     }
 }
