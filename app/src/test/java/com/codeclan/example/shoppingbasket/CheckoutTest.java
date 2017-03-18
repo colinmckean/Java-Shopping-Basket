@@ -45,4 +45,10 @@ public class CheckoutTest {
         assertEquals(3.99, checkout.getTotal(nonLoyalCustomer, basket), 0.01);
     }
 
+    @Test
+    public void testSingleItemUnderSpendLoyalCustomer(){
+        basket.addToBasket(beans);
+        assertEquals(19.11, checkout.getTotal(loyalCustomer, basket), 0.01);
+    }
+
 }
