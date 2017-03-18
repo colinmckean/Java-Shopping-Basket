@@ -27,4 +27,8 @@ class Basket {
     public void emptyBasket() {
         itemsInBasket.clear();
     }
+
+    public void removeItem(ShoppingItem item) {
+        itemsInBasket.remove(item);
+    }
 }
