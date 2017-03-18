@@ -23,4 +23,8 @@ class Basket {
     public void addToBasket(ShoppingItem item) {
         itemsInBasket.add(item);
     }
+
+    public void emptyBasket() {
+        itemsInBasket.clear();
+    }
 }
