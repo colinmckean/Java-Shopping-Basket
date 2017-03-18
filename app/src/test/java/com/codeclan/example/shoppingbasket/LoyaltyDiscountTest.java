@@ -1,5 +1,6 @@
 package com.codeclan.example.shoppingbasket;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -9,14 +10,24 @@ import static org.junit.Assert.assertEquals;
  */
 
 public class LoyaltyDiscountTest {
+    Customer nonLoyalCustomer;
+    LoyaltyCard loyaltyCard;
+    Customer loyalCustomer;
 
-    @Test
-    public void testLoyaltyDiscount(){
-        assertEquals(0.26, LoyaltyDiscount.calculateDiscount(13.00), 0.01);
+    @Before
+    public void before() {
+        nonLoyalCustomer = new Customer();
+        loyaltyCard = new LoyaltyCard(2);
+        loyalCustomer = new Customer(loyaltyCard);
     }
 
     @Test
-    public void testNonEligbleSpendDiscount() {
-        assertEquals(0.00, SpendDiscount.calculateDiscount(19.01), 0.01);
+    public void testLoyaltyDiscount() {
+        assertEquals(0.26, LoyaltyDiscount.calculateDiscount(loyalCustomer, 13.00), 0.01);
+    }
+
+    @Test
+    public void testNonLoyalDiscount() {
+        assertEquals(0, LoyaltyDiscount.calculateDiscount(nonLoyalCustomer, 13.00), 0.01);
     }
 }

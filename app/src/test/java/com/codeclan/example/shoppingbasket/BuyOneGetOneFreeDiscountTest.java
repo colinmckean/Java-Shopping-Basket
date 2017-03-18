@@ -15,22 +15,23 @@ public class BuyOneGetOneFreeDiscountTest {
     Basket basket;
     ShoppingItem item;
     ShoppingItem itemTwo;
-    BuyOneGetOneFreeDiscount bogofDiscount;
+//    BuyOneGetOneFreeDiscount bogofDiscount;
 
     @Before
     public void before() {
         basket = new Basket();
-        bogofDiscount = new BuyOneGetOneFreeDiscount();
+//        bogofDiscount = new BuyOneGetOneFreeDiscount();
         item = new ShoppingItem("bacon", 10.99f);
         itemTwo = new ShoppingItem("eggs", 5.99f);
     }
 
     @Test
     public void testOddMultiBuyCalculateDiscount() {
+        basket.emptyBasket();
         basket.addToBasket(item);
         basket.addToBasket(item);
         basket.addToBasket(item);
-        assertEquals(10.99, bogofDiscount.calculateDiscount(basket), 0.01);
+        assertEquals(10.99, BuyOneGetOneFreeDiscount.calculateDiscount(basket), 0.01);
     }
 
     @Test
@@ -39,14 +40,16 @@ public class BuyOneGetOneFreeDiscountTest {
         basket.addToBasket(item);
         basket.addToBasket(item);
         basket.addToBasket(item);
-        assertEquals(21.98, bogofDiscount.calculateDiscount(basket), 0.01);
+        assertEquals(21.98, BuyOneGetOneFreeDiscount.calculateDiscount(basket), 0.01);
     }
+
     @Test
-    public void testMultiBuyWithDifferentItems(){
+    public void testMultiBuyWithDifferentItems() {
+        basket.emptyBasket();
         basket.addToBasket(item);
         basket.addToBasket(item);
         basket.addToBasket(itemTwo);
         basket.addToBasket(itemTwo);
-        assertEquals(16.98, bogofDiscount.calculateDiscount(basket), 0.01);
+        assertEquals(16.98, BuyOneGetOneFreeDiscount.calculateDiscount(basket), 0.01);
     }
 }

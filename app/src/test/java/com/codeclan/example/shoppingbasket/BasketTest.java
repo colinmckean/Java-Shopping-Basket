@@ -3,8 +3,6 @@ package com.codeclan.example.shoppingbasket;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.HashMap;
-
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -30,18 +28,21 @@ public class BasketTest {
     public void testNumOfItemsInEmptyBasket() {
         assertEquals(0, basket.getNumOfItemsOfBasket());
     }
+
     @Test
-    public void testAddItemToBasketIncreasesCount(){
+    public void testAddItemToBasketIncreasesCount() {
         basket.addToBasket(item);
         assertEquals(1, basket.getNumOfItemsOfBasket());
     }
+
     @Test
-    public void testAddItemToBasketIncreasesTotal(){
+    public void testAddItemToBasketIncreasesTotal() {
         basket.addToBasket(item);
         assertEquals(15.99, basket.getSubTotal(), 0.01);
     }
+
     @Test
-    public void testAddingMultipleItemsToBasket(){
+    public void testAddingMultipleItemsToBasket() {
         basket.addToBasket(item);
         basket.addToBasket(item);
         assertEquals(31.98, basket.getSubTotal(), 0.01);
@@ -49,7 +50,7 @@ public class BasketTest {
     }
 
     @Test
-    public void testCanEmptyBasket(){
+    public void testCanEmptyBasket() {
         basket.addToBasket(item);
         basket.addToBasket(item);
         assertEquals(31.98, basket.getSubTotal(), 0.01);
@@ -58,8 +59,9 @@ public class BasketTest {
         assertEquals(0, basket.getNumOfItemsOfBasket());
         assertEquals(0, basket.getSubTotal(), 0.01);
     }
+
     @Test
-    public void testCanRemoveSingleItemFromBasket(){
+    public void testCanRemoveSingleItemFromBasket() {
         basket.addToBasket(item);
         basket.addToBasket(item);
         basket.removeItem(item);
