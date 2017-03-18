@@ -15,4 +15,8 @@ class Basket {
         for (ShoppingItem i : itemsInCart) subTotal += i.getPrice();
         return subTotal;
     }
+
+    public int getNumOfItemsOfBasket() {
+        return itemsInCart.size();
+    }
 }
