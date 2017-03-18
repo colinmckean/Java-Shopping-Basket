@@ -30,4 +30,13 @@ public class BuyOneGetOneFreeDiscountTest {
         testCart.add(item);
         assertEquals(10.99, BuyOneGetOneFreeDiscount.calculateDiscount(testCart), 0.01);
     }
+
+    @Test
+    public void testEvenMultiBuyCalculateDiscount() {
+        testCart.add(item);
+        testCart.add(item);
+        testCart.add(item);
+        testCart.add(item);
+        assertEquals(21.98, BuyOneGetOneFreeDiscount.calculateDiscount(testCart), 0.01);
+    }
 }
