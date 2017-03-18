@@ -71,5 +71,11 @@ public class CheckoutTest {
         basket.addToBasket(hotdogs);
         assertEquals(23.36, checkout.getTotal(loyalCustomer, basket), 0.01);
     }
-
+    @Test
+    public void testMultiBuyEligbleSpendLoyalCustomer(){
+        basket.addToBasket(beans);
+        basket.addToBasket(newsPaper);
+        basket.addToBasket(newsPaper);
+        assertEquals(34.39, checkout.getTotal(loyalCustomer, basket), 0.01);
+    }
 }
