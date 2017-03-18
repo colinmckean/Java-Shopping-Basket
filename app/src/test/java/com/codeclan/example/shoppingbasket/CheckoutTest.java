@@ -51,4 +51,20 @@ public class CheckoutTest {
         assertEquals(19.11, checkout.getTotal(loyalCustomer, basket), 0.01);
     }
 
+    @Test
+    public void testMultiBuyUnderSpendLoyalCustomer(){
+        basket.addToBasket(beans);
+        basket.addToBasket(beans);
+        assertEquals(19.11, checkout.getTotal(loyalCustomer, basket), 0.01);
+    }
+
+    @Test
+    public void testMultiBuyUnderSpendLoyalCustomerMixedItems(){
+        basket.addToBasket(cheese);
+        basket.addToBasket(cheese);
+        basket.addToBasket(hotdogs);
+        assertEquals(10.76, checkout.getTotal(loyalCustomer,basket), 0.01);
+    }
+
+
 }
