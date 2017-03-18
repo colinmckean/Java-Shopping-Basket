@@ -17,4 +17,9 @@ public class SpendDiscountTest {
     public void testEligbleSpendDiscount() {
         assertEquals(2.00, SpendDiscount.calculateDiscount(20.01), 0.01);
     }
+
+    @Test
+    public void testNonEligbleSpendDiscount() {
+        assertEquals(0.00, SpendDiscount.calculateDiscount(19.01), 0.01);
+    }
 }
