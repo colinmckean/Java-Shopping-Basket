@@ -14,7 +14,7 @@ public class BuyOneGetOneFreeDiscount {
 
     public static double calculateDiscount(Basket basket) {
         discountAmount = 0;
-        checkEligibleItems(basket.getBasket());
+        checkEligibleItems(basket.getBasketList());
         calculateDiscountAmount();
         return discountAmount;
     }

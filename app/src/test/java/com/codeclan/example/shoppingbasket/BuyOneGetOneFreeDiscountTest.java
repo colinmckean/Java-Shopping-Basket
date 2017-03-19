@@ -3,8 +3,6 @@ package com.codeclan.example.shoppingbasket;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -15,19 +13,16 @@ public class BuyOneGetOneFreeDiscountTest {
     Basket basket;
     ShoppingItem item;
     ShoppingItem itemTwo;
-//    BuyOneGetOneFreeDiscount bogofDiscount;
 
     @Before
     public void before() {
         basket = new Basket();
-//        bogofDiscount = new BuyOneGetOneFreeDiscount();
         item = new ShoppingItem("bacon", 10.99f);
         itemTwo = new ShoppingItem("eggs", 5.99f);
     }
 
     @Test
     public void testOddMultiBuyCalculateDiscount() {
-        basket.emptyBasket();
         basket.addToBasket(item);
         basket.addToBasket(item);
         basket.addToBasket(item);
@@ -45,7 +40,6 @@ public class BuyOneGetOneFreeDiscountTest {
 
     @Test
     public void testMultiBuyWithDifferentItems() {
-        basket.emptyBasket();
         basket.addToBasket(item);
         basket.addToBasket(item);
         basket.addToBasket(itemTwo);

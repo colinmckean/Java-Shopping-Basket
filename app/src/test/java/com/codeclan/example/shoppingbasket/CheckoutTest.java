@@ -34,6 +34,11 @@ public class CheckoutTest {
     }
 
     @Test
+    public void testEmptyBasketTotalBeforeANYDiscounts(){
+        assertEquals(0, checkout.getTotal(loyalCustomer,basket), 0.01);
+    }
+
+    @Test
     public void testSingleItemUnderSpendNonLoyalCustomer() {
         basket.addToBasket(beans);
         assertEquals(19.50, checkout.getTotal(nonLoyalCustomer, basket), 0.01);

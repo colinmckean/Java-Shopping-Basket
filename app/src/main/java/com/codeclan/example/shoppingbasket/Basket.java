@@ -7,14 +7,7 @@ import java.util.ArrayList;
  */
 
 class Basket {
-    private double subTotal;
     private ArrayList<ShoppingItem> itemsInBasket = new ArrayList<>();
-
-    public double getSubTotal() {
-        subTotal = 0;
-        for (ShoppingItem i : itemsInBasket) subTotal += i.getPrice();
-        return subTotal;
-    }
 
     public int getNumOfItemsOfBasket() {
         return itemsInBasket.size();
@@ -32,7 +25,7 @@ class Basket {
         itemsInBasket.remove(item);
     }
 
-    public ArrayList<ShoppingItem> getBasket() {
+    public ArrayList<ShoppingItem> getBasketList() {
         return new ArrayList<>(itemsInBasket);
     }
 }

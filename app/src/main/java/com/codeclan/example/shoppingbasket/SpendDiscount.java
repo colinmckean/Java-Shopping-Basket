@@ -1,7 +1,5 @@
 package com.codeclan.example.shoppingbasket;
 
-import java.util.ArrayList;
-
 /**
  * Created by user on 18/03/2017.
  */
